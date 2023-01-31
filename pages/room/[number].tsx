@@ -12,10 +12,10 @@ import {
 import { Container } from '@mui/system'
 import Image, { StaticImageData } from 'next/image'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Carousel from 'react-material-ui-carousel'
 import Header from '../../components/Header'
-import { featuresIcons, ImetroData, IFeatures } from '../api/dataAPI'
+import { featuresIcons, ImetroData, IFeatures } from '../../public/api/dataAPI'
 import style from '../../styles/RoomPage.module.scss'
 import AspectRatioIcon from '@mui/icons-material/AspectRatio'
 import BedIcon from '@mui/icons-material/Bed'
@@ -23,12 +23,25 @@ import StairsIcon from '@mui/icons-material/Stairs'
 import ApartmentIcon from '@mui/icons-material/Apartment'
 import { rooms } from '../../src/dataListRooms'
 import dynamic from 'next/dynamic'
+import ky from 'ky'
+import { InferGetServerSidePropsType } from 'next'
+
+import { dataExport } from '../../public/api/dataAPI'
+
+// export async function getServerSideProps() {
+//     // const url = 'http://localhost:3000/api/dataAPI'
+//     // const res = await fetch(url)
+//     // const dataExport = await res.json()
+
+//     const dataExport = await ky.get(api).json()
+//     return { props: { dataExport } }
+// }
 
 const YandexMapRoomPage = dynamic(
     () => import('../../components/YandexMapRoomPage')
 )
 
-const Post = ({ dataExport }: any) => {
+const roomPage = () => {
     const router = useRouter()
     const { number } = router.query
 
@@ -54,7 +67,7 @@ const Post = ({ dataExport }: any) => {
             {dataExport.map((data: any) => {
                 if (data.id === number) {
                     return (
-                        <>
+                        <div key={data.id}>
                             <Header />
                             <div className={style.room}>
                                 <Container
@@ -695,7 +708,7 @@ const Post = ({ dataExport }: any) => {
                                     <YandexMapRoomPage data={data} />
                                 </Container>
                             </div>
-                        </>
+                        </div>
                     )
                 }
             })}
@@ -749,11 +762,4 @@ const Post = ({ dataExport }: any) => {
     )
 }
 
-export default Post
-
-export async function getServerSideProps() {
-    const url = 'http://localhost:3000/api/dataAPI'
-    const res = await fetch(url)
-    const dataExport = await res.json()
-    return { props: { dataExport } }
-}
+export default roomPage

@@ -119,7 +119,7 @@ l-3065 0 -110 -23z m3372 -2611 c171 -30 229 -62 271 -154 34 -74 37 -158 24
                             </Typography>
                         </Grid>
                         {rooms.map((data: any) => (
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} md={6} key={data.id}>
                                 <Link
                                     href={data.href}
                                     target='_blank'
