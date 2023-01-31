@@ -1,0 +1,23 @@
+.wrapper {
+    width: 100%;
+}
+.wrapper iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.room {
+    padding: 0 7rem;
+}
+
+@media (max-width: 1200px) {
+    .room {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .room {
+        padding: 0 1rem;
+    }
+}
