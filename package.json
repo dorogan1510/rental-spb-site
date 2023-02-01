@@ -17,8 +17,6 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@next/font": "latest",
-    "@pbe/react-yandex-maps": "^1.2.2",
-    "ky": "^0.33.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

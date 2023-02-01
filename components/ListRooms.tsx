@@ -1,5 +1,4 @@
 import {
-    Box,
     Card,
     CardActionArea,
     CardContent,
@@ -7,13 +6,13 @@ import {
     Container,
     Typography,
 } from '@mui/material'
-import { rooms } from '../src/dataListRooms'
 
 import Grid2 from '@mui/material/Unstable_Grid2'
 import Image from 'next/image'
 import style from '../styles/ListRooms.module.scss'
 
 import dynamic from 'next/dynamic'
+import { dataExport, Idata } from '../src/data'
 
 const YandexMapMain = dynamic(() => import('./YandexMapMain'))
 
@@ -29,7 +28,7 @@ const ListRooms = () => {
                     columns={{ xs: 1, sm: 4, md: 12 }}
                     justifyContent='center'
                 >
-                    {rooms.map((data: any) => (
+                    {dataExport.map((data: Idata) => (
                         <Grid2 key={data.id}>
                             <Card
                                 sx={{
@@ -52,7 +51,7 @@ const ListRooms = () => {
                                 >
                                     <CardMedia component='div'>
                                         <Image
-                                            src={data.img}
+                                            src={data.img[0]}
                                             alt={'image'}
                                             style={{
                                                 width: '100%',

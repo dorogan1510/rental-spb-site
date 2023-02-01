@@ -1,8 +1,6 @@
 import { Button, Grid, IconButton, Stack, Typography } from '@mui/material'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React from 'react'
-import { rooms } from '../src/dataListRooms'
+import { dataExport, Idata } from '../src/data'
 import style from '../styles/Footer.module.scss'
 
 const Footer = () => {
@@ -118,7 +116,7 @@ l-3065 0 -110 -23z m3372 -2611 c171 -30 229 -62 271 -154 34 -74 37 -158 24
                                 Наши квартиры
                             </Typography>
                         </Grid>
-                        {rooms.map((data: any) => (
+                        {dataExport.map((data: Idata) => (
                             <Grid item xs={12} md={6} key={data.id}>
                                 <Link
                                     href={data.href}

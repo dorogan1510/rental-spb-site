@@ -34,7 +34,6 @@ export default function MyApp(props: MyAppProps) {
                 <CssBaseline />
 
                 <Component {...pageProps} />
-                <Footer />
             </ThemeProvider>
         </CacheProvider>
     )
