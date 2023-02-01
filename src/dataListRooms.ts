@@ -1,8 +1,8 @@
-import lomonosova26_28m2_1 from '../src/img/rooms/Lomonosova26_28m2/Lomonosova26_28m2(1).jpg'
-import lomonosova26_20m2_1 from '../src/img/rooms/Lomonosova26_20m2/Lomonosova26_20m2(1).jpg'
-import Fontanka108_18m2_1 from '../src/img/rooms/Fontanka108_18m2/Fontanka108_18m2(1).jpg'
-import Nevskiy88_18m2_1 from '../src/img/rooms/Nevskiy88_18m2/Nevskiy88_18m2(1).jpg'
-import Rubinshteyna18_5_30m2_1 from '../src/img/rooms/Rubinshteyna18_5_30m2/Rubinshteyna18_5_30m2(1).jpg'
+import lomonosova26_28m2_1 from '../public/static/img/rooms/Lomonosova26_28m2/Lomonosova26_28m2(1).jpg'
+import lomonosova26_20m2_1 from '../public/static/img/rooms/Lomonosova26_20m2/Lomonosova26_20m2(1).jpg'
+import Fontanka108_18m2_1 from '../public/static/img/rooms/Fontanka108_18m2/Fontanka108_18m2(1).jpg'
+import Nevskiy88_18m2_1 from '../public/static/img/rooms/Nevskiy88_18m2/Nevskiy88_18m2(1).jpg'
+import Rubinshteyna18_5_30m2_1 from '../public/static/img/rooms/Rubinshteyna18_5_30m2/Rubinshteyna18_5_30m2(1).jpg'
 
 export const rooms = [
     {
