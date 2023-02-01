@@ -4,8 +4,6 @@ const YandexMapMain = () => (
     <div
         style={{
             margin: '0 auto ',
-            // padding: '0 1rem',
-            maxWidth: '900px',
         }}
     >
         <div className={style.wrapper}>

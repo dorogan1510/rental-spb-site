@@ -23,7 +23,7 @@ import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { dataExport, Idata } from '../../../src/data'
 import Carousel from 'react-material-ui-carousel'
-import metro from '../../../public/static/img/metro.jpg'
+import MetroImage from './MetroImage'
 
 const YandexMapMain = dynamic(() => import('./YandexMapMain'))
 
@@ -33,7 +33,7 @@ const modalStyle = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '85%',
-    maxWidth: '1000px',
+    maxWidth: '500px',
     bgcolor: 'background.paper',
     boxShadow: 24,
     borderRadius: '0.5rem',
@@ -184,15 +184,26 @@ const ListRooms = () => {
             >
                 <Fade in={metroVisible}>
                     <Box sx={modalStyle}>
-                        <Image
-                            src={metro}
-                            alt={'metro-map'}
+                        {/* <div
                             style={{
-                                width: '100%',
-                                height: '100%',
-                                borderRadius: '0.5rem',
+                                margin: '0 auto ',
+                                // padding: '0 1rem',
+                                maxWidth: '900px',
                             }}
-                        />
+                        >
+                            <div className={style.wrapper}>
+                                <Image
+                                    src={metro}
+                                    alt={'metro-map'}
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                        borderRadius: '0.5rem',
+                                    }}
+                                />
+                            </div>
+                        </div> */}
+                        <MetroImage />
                     </Box>
                 </Fade>
             </Modal>

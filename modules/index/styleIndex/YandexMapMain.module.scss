@@ -16,6 +16,16 @@
     box-shadow: rgb(0 0 0 / 30%) 0rem 0.45rem 0.775rem -0.0625rem,
         rgb(0 0 0 / 10%) 0rem 0.125rem 1.25rem -0.0625rem;
 }
+.wrapper img {
+    margin: -3rem 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0.5rem;
+}
 
 @media (max-width: 1024px) {
     .wrapper iframe {
