@@ -15,7 +15,8 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Carousel from 'react-material-ui-carousel'
 import Header from '../../components/Header'
-import { featuresIcons, ImetroData, IFeatures } from '../../public/api/dataAPI'
+import { featuresIcons, ImetroData, IFeatures } from '../api/dataAPI'
+
 import style from '../../styles/RoomPage.module.scss'
 import AspectRatioIcon from '@mui/icons-material/AspectRatio'
 import BedIcon from '@mui/icons-material/Bed'
@@ -24,24 +25,12 @@ import ApartmentIcon from '@mui/icons-material/Apartment'
 import { rooms } from '../../src/dataListRooms'
 import dynamic from 'next/dynamic'
 import ky from 'ky'
-import { InferGetServerSidePropsType } from 'next'
-
-import { dataExport } from '../../public/api/dataAPI'
-
-// export async function getServerSideProps() {
-//     // const url = 'http://localhost:3000/api/dataAPI'
-//     // const res = await fetch(url)
-//     // const dataExport = await res.json()
-
-//     const dataExport = await ky.get(api).json()
-//     return { props: { dataExport } }
-// }
 
 const YandexMapRoomPage = dynamic(
     () => import('../../components/YandexMapRoomPage')
 )
 
-const roomPage = () => {
+const roomPage = ({ dataExport }: any) => {
     const router = useRouter()
     const { number } = router.query
 
@@ -763,3 +752,12 @@ const roomPage = () => {
 }
 
 export default roomPage
+
+export async function getServerSideProps() {
+    // const url = 'http://localhost:3000/api/dataAPI'
+    // const res = await fetch(url)
+    // const dataExport = await res.json()
+
+    const dataExport = await ky.get('http://localhost:3000/api/dataAPI').json()
+    return { props: { dataExport } }
+}

@@ -30,7 +30,7 @@ const ListRooms = () => {
                     justifyContent='center'
                 >
                     {rooms.map((data: any) => (
-                        <Grid2>
+                        <Grid2 key={data.id}>
                             <Card
                                 sx={{
                                     maxWidth: { xs: 325, sm: 345, md: 355 },
