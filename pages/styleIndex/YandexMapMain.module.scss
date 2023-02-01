@@ -2,7 +2,7 @@
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;
-    height: 0;
+    height: 90vh;
 }
 .wrapper iframe {
     margin: -3rem 0 0;
@@ -15,4 +15,10 @@
     border-radius: 0.5rem;
     box-shadow: rgb(0 0 0 / 30%) 0rem 0.45rem 0.775rem -0.0625rem,
         rgb(0 0 0 / 10%) 0rem 0.125rem 1.25rem -0.0625rem;
+}
+
+@media (max-width: 1024px) {
+    .wrapper iframe {
+        margin: 0;
+    }
 }

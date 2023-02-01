@@ -24,12 +24,13 @@ const theme = createTheme({
     typography: {
         fontFamily: bodyFont.style.fontFamily,
         h1: {
-            fontSize: '36px',
+            fontSize: '46px',
             color: 'white',
             fontWeight: '700',
+            fontFamily: 'Cormorant',
 
             '@media (max-width:1024px)': {
-                fontSize: '30px',
+                fontSize: '40px',
             },
         },
         h2: {

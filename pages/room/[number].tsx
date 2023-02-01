@@ -29,10 +29,11 @@ import BedIcon from '@mui/icons-material/Bed'
 import StairsIcon from '@mui/icons-material/Stairs'
 import dynamic from 'next/dynamic'
 import Footer from '../../components/Footer'
-import style from '../../styles/RoomPage.module.scss'
+import style from './styles/RoomPage.module.scss'
+import { titleFont } from '../../styles/fonts'
 
 const YandexMapRoomPage = dynamic(
-    () => import('../../components/YandexMapRoomPage')
+    () => import('./components/YandexMapRoomPage')
 )
 
 const roomPage = () => {
@@ -93,6 +94,7 @@ const roomPage = () => {
                                                         opacity: 0.8,
                                                     },
                                                     transition: '0.3s',
+                                                    width: '100%',
                                                 }}
                                             >
                                                 <Image
@@ -276,6 +278,7 @@ const roomPage = () => {
                                                     color: 'primary.main',
                                                 }}
                                                 gutterBottom
+                                                className={titleFont.className}
                                             >
                                                 {data.title}
                                             </Typography>
@@ -475,42 +478,6 @@ const roomPage = () => {
                                                         </Typography>
                                                         <Typography variant='h5'>
                                                             {data.floor}
-                                                        </Typography>
-                                                    </Stack>
-                                                </Stack>
-                                                <Stack
-                                                    sx={{
-                                                        flexDirection: 'row',
-                                                        gap: '1rem',
-                                                    }}
-                                                >
-                                                    <ApartmentIcon
-                                                        color='primary'
-                                                        sx={{
-                                                            width: 40,
-                                                            height: 40,
-                                                        }}
-                                                    />
-                                                    <Stack
-                                                        sx={{
-                                                            textAlign: 'center',
-                                                            flexDirection: {
-                                                                xs: 'row',
-                                                                md: 'column',
-                                                            },
-                                                            gap: {
-                                                                xs: '1rem',
-                                                                md: '0.5rem',
-                                                            },
-                                                        }}
-                                                    >
-                                                        <Typography variant='body1'>
-                                                            Год постройки
-                                                        </Typography>
-                                                        <Typography variant='h5'>
-                                                            {
-                                                                data.yearOfСonstruction
-                                                            }
                                                         </Typography>
                                                     </Stack>
                                                 </Stack>
@@ -725,27 +692,31 @@ const roomPage = () => {
                         {dataExport.map((data: Idata) => {
                             if (data.id === number) {
                                 return (
-                                    <Carousel
-                                        navButtonsAlwaysVisible
-                                        autoPlay={false}
-                                        key={data.id}
-                                    >
-                                        {data.img.map(
-                                            (nestedData: StaticImageData) => (
-                                                <Image
-                                                    key={nestedData.toString()}
-                                                    src={nestedData}
-                                                    alt={'img'}
-                                                    style={{
-                                                        width: '100%',
-                                                        height: 'auto',
-                                                        borderRadius: '0.5rem',
-                                                    }}
-                                                    priority
-                                                />
-                                            )
-                                        )}
-                                    </Carousel>
+                                    <div>
+                                        <Carousel
+                                            navButtonsAlwaysVisible
+                                            autoPlay={false}
+                                            key={data.id}
+                                        >
+                                            {data.img.map(
+                                                (
+                                                    nestedData: StaticImageData
+                                                ) => (
+                                                    <Image
+                                                        key={nestedData.toString()}
+                                                        src={nestedData}
+                                                        alt={'img'}
+                                                        style={{
+                                                            width: '100%',
+                                                            height: '100%',
+                                                            borderRadius:
+                                                                '0.5rem',
+                                                        }}
+                                                    />
+                                                )
+                                            )}
+                                        </Carousel>
+                                    </div>
                                 )
                             }
                         })}

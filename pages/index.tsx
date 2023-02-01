@@ -1,8 +1,8 @@
 import { Typography } from '@mui/material'
 import Box from '@mui/material/Box'
-import ListRooms from '../components/ListRooms'
 import { titleFont } from '../styles/fonts'
-import style from '../styles/Index.module.scss'
+import ListRooms from './componentsIndex/ListRooms'
+import style from './styleIndex/Index.module.scss'
 
 import Header from '../components/Header'
 
@@ -11,16 +11,19 @@ const index = () => {
         <>
             <Box className={style.index}>
                 <Header />
-                <Box sx={{ textAlign: 'center' }}>
+                <Box sx={{ textAlign: 'center', padding: '1rem' }}>
                     <Typography
                         variant='h1'
                         gutterBottom
                         className={titleFont.className}
                     >
-                        Добро пожаловать!
+                        "Добро пожаловать"
                     </Typography>
                     <Typography variant='subtitle1'>
-                        Сайт №1 посуточной аренды квартир Санкт-Петербурга
+                        Квартиры посуточно в центре города Санкт-Петербург -
+                        выгоднее и комфортнее, чем номер в гостинице. Вы можете
+                        снять квартиру напрямую у владельца без посредников и
+                        переплаты. Отличные варианты жилья на любой бюджет.
                     </Typography>
                 </Box>
             </Box>

@@ -1,4 +1,4 @@
-import style from '../styles/YandexMapRoomPage.module.scss'
+import style from '../../../styles/YandexMapRoomPage.module.scss'
 
 const YandexMapRoomPage = ({ data }: any) => {
     return (

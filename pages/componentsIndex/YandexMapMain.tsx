@@ -1,10 +1,10 @@
-import style from '../styles/YandexMapMain.module.scss'
+import style from '../styleIndex/YandexMapMain.module.scss'
 
 const YandexMapMain = () => (
     <div
         style={{
             margin: '0 auto ',
-            padding: '0 1rem',
+            // padding: '0 1rem',
             maxWidth: '900px',
         }}
     >

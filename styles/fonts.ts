@@ -6,7 +6,7 @@ export const bodyFont = Roboto({
     display: 'swap',
     fallback: ['Helvetica', 'Arial', 'sans-serif'],
 })
-export const titleFont = Roboto_Slab({
+export const titleFont = Cormorant({
     weight: ['300', '400', '500', '700'],
     subsets: ['latin', 'cyrillic'],
     display: 'swap',

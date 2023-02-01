@@ -1,25 +1,82 @@
 import {
+    Backdrop,
+    Box,
+    Button,
     Card,
     CardActionArea,
     CardContent,
     CardMedia,
     Container,
+    Fade,
+    IconButton,
+    Modal,
+    Stack,
     Typography,
 } from '@mui/material'
-
+import MapIcon from '@mui/icons-material/Map'
+import CloseIcon from '@mui/icons-material/Close'
+import style from '../styleIndex/ListRooms.module.scss'
 import Grid2 from '@mui/material/Unstable_Grid2'
-import Image from 'next/image'
-import style from '../styles/ListRooms.module.scss'
-
+import Image, { StaticImageData } from 'next/image'
+import SubwayIcon from '@mui/icons-material/Subway'
 import dynamic from 'next/dynamic'
-import { dataExport, Idata } from '../src/data'
+import { useState } from 'react'
+import { dataExport, Idata } from '../../src/data'
+import Carousel from 'react-material-ui-carousel'
+import metro from '../../public/static/img/metro.jpg'
 
 const YandexMapMain = dynamic(() => import('./YandexMapMain'))
 
+const modalStyle = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '85%',
+    maxWidth: '1000px',
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    borderRadius: '0.5rem',
+}
+
 const ListRooms = () => {
+    const [mapVisible, setMapVisible] = useState<boolean>(false)
+    const openMap = () => setMapVisible(true)
+    const closeMap = () => setMapVisible(false)
+
+    const [metroVisible, setMetroVisible] = useState<boolean>(false)
+    const openMetro = () => setMetroVisible(true)
+    const closeMetro = () => setMetroVisible(false)
+
     return (
         <div className={style.container}>
-            <YandexMapMain />
+            <Box
+                sx={{
+                    padding: 0,
+                    display: { xs: 'none', md: 'block' },
+                }}
+            >
+                <YandexMapMain />
+            </Box>
+            <Stack
+                direction='row'
+                sx={{
+                    padding: '2rem',
+                    textAlign: 'center',
+                    display: { xs: 'block', md: 'none' },
+                }}
+            >
+                <IconButton aria-label='open-map' onClick={openMap}>
+                    <MapIcon sx={{ height: 40, width: 40 }} color='primary' />
+                </IconButton>
+                <IconButton aria-label='open-metro' onClick={openMetro}>
+                    <SubwayIcon
+                        sx={{ height: 40, width: 40 }}
+                        color='primary'
+                    />
+                </IconButton>
+            </Stack>
+
             <Container maxWidth='xl'>
                 <Grid2
                     container
@@ -97,6 +154,48 @@ const ListRooms = () => {
                     ))}
                 </Grid2>
             </Container>
+            <Modal
+                aria-labelledby='transition-modal-title'
+                aria-describedby='transition-modal-description'
+                open={mapVisible}
+                onClose={closeMap}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <Fade in={mapVisible}>
+                    <Box sx={modalStyle}>
+                        <YandexMapMain />
+                    </Box>
+                </Fade>
+            </Modal>
+            <Modal
+                aria-labelledby='transition-modal-title'
+                aria-describedby='transition-modal-description'
+                open={metroVisible}
+                onClose={closeMetro}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <Fade in={metroVisible}>
+                    <Box sx={modalStyle}>
+                        <Image
+                            src={metro}
+                            alt={'metro-map'}
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                borderRadius: '0.5rem',
+                            }}
+                        />
+                    </Box>
+                </Fade>
+            </Modal>
         </div>
     )
 }
