@@ -29,11 +29,11 @@ import BedIcon from '@mui/icons-material/Bed'
 import StairsIcon from '@mui/icons-material/Stairs'
 import dynamic from 'next/dynamic'
 import Footer from '../../components/Footer'
-import style from './styles/RoomPage.module.scss'
+import style from '../../modules/room/styles/RoomPage.module.scss'
 import { titleFont } from '../../styles/fonts'
 
 const YandexMapRoomPage = dynamic(
-    () => import('./components/YandexMapRoomPage')
+    () => import('../../modules/room/components/YandexMapRoomPage')
 )
 
 const roomPage = () => {

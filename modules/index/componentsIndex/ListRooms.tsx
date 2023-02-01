@@ -21,9 +21,9 @@ import Image, { StaticImageData } from 'next/image'
 import SubwayIcon from '@mui/icons-material/Subway'
 import dynamic from 'next/dynamic'
 import { useState } from 'react'
-import { dataExport, Idata } from '../../src/data'
+import { dataExport, Idata } from '../../../src/data'
 import Carousel from 'react-material-ui-carousel'
-import metro from '../../public/static/img/metro.jpg'
+import metro from '../../../public/static/img/metro.jpg'
 
 const YandexMapMain = dynamic(() => import('./YandexMapMain'))
 

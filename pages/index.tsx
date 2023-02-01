@@ -1,10 +1,11 @@
 import { Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { titleFont } from '../styles/fonts'
-import ListRooms from './componentsIndex/ListRooms'
-import style from './styleIndex/Index.module.scss'
+import ListRooms from '../modules/index/componentsIndex/ListRooms'
+import style from '../modules/index/styleIndex/Index.module.scss'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const index = () => {
     return (
@@ -32,6 +33,7 @@ const index = () => {
             <Box sx={{ padding: '0 1rem', mb: '5rem' }}>
                 <ListRooms />
             </Box>
+            <Footer />
         </>
     )
 }
