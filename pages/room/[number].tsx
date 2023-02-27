@@ -4,6 +4,7 @@ import {
     Button,
     Fade,
     Grid,
+    IconButton,
     Modal,
     Paper,
     Stack,
@@ -14,7 +15,7 @@ import Image, { StaticImageData } from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Carousel from 'react-material-ui-carousel'
-import Header from '../../components/Header'
+import Header from '../../globalComponents/Header'
 import {
     dataExport,
     featuresIcons,
@@ -23,46 +24,54 @@ import {
     ImetroData,
 } from '../../src/data'
 
-import ApartmentIcon from '@mui/icons-material/Apartment'
 import AspectRatioIcon from '@mui/icons-material/AspectRatio'
 import BedIcon from '@mui/icons-material/Bed'
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
 import StairsIcon from '@mui/icons-material/Stairs'
+import TelegramIcon from '@mui/icons-material/Telegram'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import dynamic from 'next/dynamic'
-import Footer from '../../components/Footer'
-import style from '../../modules/room/styles/RoomPage.module.scss'
+import Footer from '../../globalComponents/Footer'
+import style from '../../components/room/RoomPage.module.scss'
+import { cn } from '../../src/translation/cn'
+import { ru } from '../../src/translation/ru'
 import { titleFont } from '../../styles/fonts'
+import Balancer from 'react-wrap-balancer'
 
 const YandexMapRoomPage = dynamic(
-    () => import('../../modules/room/components/YandexMapRoomPage')
+    () => import('../../components/room/YandexMapRoomPage')
 )
 
 const roomPage = () => {
     const router = useRouter()
     const { number } = router.query
+    const { locale } = router
 
-    const [open, setOpen] = useState(false)
-    const handleOpen = () => setOpen(true)
-    const handleClose = () => setOpen(false)
+    const translate: any = (() => {
+        switch (locale) {
+            case 'ru':
+                return ru
+            case 'cn':
+                return cn
+            default:
+                ru
+        }
+    })()
 
-    const modalStyle = {
-        position: 'absolute' as 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '90%',
-        maxWidth: '1000px',
-        bgcolor: 'background.paper',
-        boxShadow: 24,
-        borderRadius: '0.5rem',
-        p: '1rem',
-    }
+    const [imageCarouselOpen, setImageCarouselOpen] = useState(false)
+    const handleImageCarouselOpen = () => setImageCarouselOpen(true)
+    const handleImageCarouselClose = () => setImageCarouselOpen(false)
+
+    const [bookingOpen, setBookingOpen] = useState(false)
+    const handleBookingOpen = () => setBookingOpen(true)
+    const handleBookingClose = () => setBookingOpen(false)
 
     return (
         <>
             {dataExport.map((data: Idata) => {
                 if (data.id === number) {
                     return (
-                        <div key={data.id}>
+                        <Box key={data.id}>
                             <Header />
                             <div className={style.room}>
                                 <Container
@@ -72,6 +81,7 @@ const roomPage = () => {
                                         backgroundColor: '#ffffff',
                                         borderRadius: '1rem',
                                         padding: '0 1rem 3rem ',
+                                        mb: '3rem',
                                     }}
                                 >
                                     {/* Images above */}
@@ -87,7 +97,9 @@ const roomPage = () => {
                                     >
                                         <Grid item xs={12} md={6}>
                                             <Button
-                                                onClick={handleOpen}
+                                                onClick={
+                                                    handleImageCarouselOpen
+                                                }
                                                 sx={{
                                                     padding: '0',
                                                     '&:hover': {
@@ -132,7 +144,9 @@ const roomPage = () => {
                                                 }}
                                             >
                                                 <Button
-                                                    onClick={handleOpen}
+                                                    onClick={
+                                                        handleImageCarouselOpen
+                                                    }
                                                     sx={{
                                                         padding: '0',
                                                         '&:hover': {
@@ -164,7 +178,9 @@ const roomPage = () => {
                                                 }}
                                             >
                                                 <Button
-                                                    onClick={handleOpen}
+                                                    onClick={
+                                                        handleImageCarouselOpen
+                                                    }
                                                     sx={{
                                                         padding: '0',
                                                         '&:hover': {
@@ -196,7 +212,9 @@ const roomPage = () => {
                                                 }}
                                             >
                                                 <Button
-                                                    onClick={handleOpen}
+                                                    onClick={
+                                                        handleImageCarouselOpen
+                                                    }
                                                     sx={{
                                                         padding: '0',
                                                         '&:hover': {
@@ -228,7 +246,9 @@ const roomPage = () => {
                                                 }}
                                             >
                                                 <Button
-                                                    onClick={handleOpen}
+                                                    onClick={
+                                                        handleImageCarouselOpen
+                                                    }
                                                     sx={{
                                                         padding: '0',
                                                         '&:hover': {
@@ -399,14 +419,13 @@ const roomPage = () => {
                                                                 xs: 'row',
                                                                 md: 'column',
                                                             },
-                                                            gap: {
-                                                                xs: '1rem',
-                                                                md: '0.5rem',
-                                                            },
+                                                            gap: '0.5rem',
                                                         }}
                                                     >
                                                         <Typography variant='body1'>
-                                                            Площадь
+                                                            {
+                                                                translate.roomSquare
+                                                            }
                                                         </Typography>
                                                         <Typography variant='h5'>
                                                             {data.totalArea}
@@ -433,10 +452,7 @@ const roomPage = () => {
                                                                 xs: 'row',
                                                                 md: 'column',
                                                             },
-                                                            gap: {
-                                                                xs: '1rem',
-                                                                md: '0.5rem',
-                                                            },
+                                                            gap: '0.5rem',
                                                         }}
                                                     >
                                                         <Typography variant='body1'>
@@ -467,10 +483,7 @@ const roomPage = () => {
                                                                 xs: 'row',
                                                                 md: 'column',
                                                             },
-                                                            gap: {
-                                                                xs: '1rem',
-                                                                md: '0.5rem',
-                                                            },
+                                                            gap: '0.5rem',
                                                         }}
                                                     >
                                                         <Typography variant='body1'>
@@ -601,7 +614,7 @@ const roomPage = () => {
                                                         item
                                                         xs={6}
                                                         sx={{
-                                                            textAlign: 'center',
+                                                            textAlign: 'left',
                                                         }}
                                                     >
                                                         <Typography
@@ -637,6 +650,9 @@ const roomPage = () => {
                                                 <Button
                                                     size='large'
                                                     variant='contained'
+                                                    onClick={() =>
+                                                        setBookingOpen(true)
+                                                    }
                                                 >
                                                     Забронировать
                                                 </Button>
@@ -670,25 +686,25 @@ const roomPage = () => {
                                 </Container>
                             </div>
                             <Footer />
-                        </div>
+                        </Box>
                     )
                 }
             })}
 
-            {/* Modal window separate */}
+            {/* Modal window image carousel*/}
             <Modal
                 aria-labelledby='transition-modal-title'
                 aria-describedby='transition-modal-description'
-                open={open}
-                onClose={handleClose}
+                open={imageCarouselOpen}
+                onClose={handleImageCarouselClose}
                 closeAfterTransition
                 BackdropComponent={Backdrop}
                 BackdropProps={{
                     timeout: 500,
                 }}
             >
-                <Fade in={open}>
-                    <Box sx={modalStyle}>
+                <Fade in={imageCarouselOpen}>
+                    <Box className={style.imageCarouselModal}>
                         {dataExport.map((data: Idata) => {
                             if (data.id === number) {
                                 return (
@@ -723,7 +739,70 @@ const roomPage = () => {
                     </Box>
                 </Fade>
             </Modal>
-            {/* Modal window separate */}
+            {/* Modal window image carousel*/}
+
+            {/* Modal window booking */}
+            <Modal
+                aria-labelledby='transition-modal-title'
+                aria-describedby='transition-modal-description'
+                open={bookingOpen}
+                onClose={handleBookingClose}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <Fade in={bookingOpen}>
+                    <Box className={style.bookingModal}>
+                        <Typography variant='body1'>
+                            Для того, чтобы забронировать квартиру выберите
+                            удобный для вас способ связи и свяжитесь с нашим
+                            менеджером, каоторый даст вам точную информацию по
+                            свободным датам и точной цене:
+                        </Typography>
+                        <Stack
+                            sx={{
+                                flexDirection: 'row',
+                                gap: '1rem',
+                                justifyContent: 'center',
+                                padding: '1rem',
+                            }}
+                        >
+                            <IconButton
+                                href='tel:+79275692869'
+                                aria-label='call'
+                            >
+                                <LocalPhoneIcon
+                                    color='primary'
+                                    sx={{ width: '35px', height: '35px' }}
+                                />
+                            </IconButton>
+                            <IconButton
+                                href='https://t.me/+79275692869'
+                                target='_blank'
+                                aria-label='telegram'
+                            >
+                                <TelegramIcon
+                                    color='primary'
+                                    sx={{ width: '35px', height: '35px' }}
+                                />
+                            </IconButton>
+                            <IconButton
+                                href='https://api.whatsapp.com/send?phone=79275692869&text='
+                                target='_blank'
+                                aria-label='whatsApp'
+                            >
+                                <WhatsAppIcon
+                                    color='primary'
+                                    sx={{ width: '35px', height: '35px' }}
+                                />
+                            </IconButton>
+                        </Stack>
+                    </Box>
+                </Fade>
+            </Modal>
+            {/* Modal window booking */}
         </>
     )
 }

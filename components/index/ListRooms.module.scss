@@ -1,0 +1,18 @@
+.container {
+    margin: -3rem auto;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(400%) blur(30px);
+    padding-bottom: 3rem;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 500px;
+    box-shadow: 24;
+    border-radius: 0.5rem;
+}
