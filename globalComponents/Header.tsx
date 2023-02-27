@@ -80,7 +80,7 @@ const Header = () => {
             <Container maxWidth='xl'>
                 <Toolbar
                     disableGutters
-                    sx={{ justifyContent: { xs: 'flex-start', sm: 'center' } }}
+                    sx={{ justifyContent: { xs: 'flex-start', md: 'center' } }}
                 >
                     {/* <Box sx={{ flexGrow: 1 }}>
                         <IconButton
