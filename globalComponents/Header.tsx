@@ -32,6 +32,13 @@ const Header = () => {
         const { pathname, asPath, query } = router
         router.replace({ pathname, query }, asPath, { locale })
     }
+    const [hrefRoomList, setHrefRoomList] = React.useState<string>('#room-list')
+
+    React.useEffect(() => {
+        if (router.pathname !== '/') {
+            setHrefRoomList('/#room-list')
+        }
+    }, [])
 
     const pages = [
         {
@@ -43,7 +50,7 @@ const Header = () => {
         {
             id: '#id2',
             link: 'Наши квартиры',
-            href: '#room-list',
+            href: hrefRoomList,
         },
         // {
         //     id: '#id2',
