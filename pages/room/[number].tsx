@@ -75,7 +75,6 @@ const roomPage = () => {
                             <Header />
                             <div className={style.room}>
                                 <Container
-                                    key={data.id}
                                     maxWidth='xl'
                                     sx={{
                                         backgroundColor: '#ffffff',
@@ -579,7 +578,7 @@ const roomPage = () => {
                                                 >
                                                     {data.price}
                                                 </Typography>
-                                                <Grid
+                                                {/* <Grid
                                                     container
                                                     columnSpacing={2}
                                                     sx={{ mb: '2rem' }}
@@ -646,7 +645,7 @@ const roomPage = () => {
                                                             }
                                                         </Typography>
                                                     </Grid>
-                                                </Grid>
+                                                </Grid> */}
                                                 <Button
                                                     size='large'
                                                     variant='contained'
@@ -716,7 +715,8 @@ const roomPage = () => {
                                         >
                                             {data.img.map(
                                                 (
-                                                    nestedData: StaticImageData
+                                                    nestedData: StaticImageData,
+                                                    index: any
                                                 ) => (
                                                     <Image
                                                         key={nestedData.toString()}
