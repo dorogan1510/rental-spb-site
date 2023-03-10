@@ -567,6 +567,10 @@ const roomPage = () => {
                                                     padding: '2rem',
                                                     border: '1px solid #e2e2e2',
                                                     borderRadius: '0.5rem',
+                                                    textAlign: {
+                                                        xs: 'center',
+                                                        md: 'left',
+                                                    },
                                                 }}
                                             >
                                                 <Typography
@@ -758,7 +762,7 @@ const roomPage = () => {
                         <Typography variant='body1'>
                             Для того, чтобы забронировать квартиру выберите
                             удобный для вас способ связи и свяжитесь с нашим
-                            менеджером, каоторый даст вам точную информацию по
+                            менеджером, каоторый даст вам информацию по
                             свободным датам и точной цене:
                         </Typography>
                         <Stack

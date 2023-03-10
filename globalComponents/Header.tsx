@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import { useRouter } from 'next/router'
 import * as React from 'react'
+import Link from '../src/Link'
 import { cn } from '../src/translation/cn'
 import { ru } from '../src/translation/ru'
 
@@ -52,15 +53,15 @@ const Header = () => {
             link: 'Наши квартиры',
             href: hrefRoomList,
         },
-        // {
-        //     id: '#id2',
-        //     link: 'О нас',
-        //     href: '/',
-        // },
+        {
+            id: '#id3',
+            link: 'О нас',
+            href: '/about',
+        },
     ]
 
     const dynamicHeaderStyle = {
-        color: router.asPath === '/' ? 'white' : '#1a2d4d',
+        color: router.asPath === '/' ? 'white' : '#1a2d4d !important',
     }
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -166,15 +167,18 @@ const Header = () => {
                             }}
                         >
                             {pages.map(page => (
-                                <MenuItem
-                                    key={page.id}
-                                    onClick={handleCloseNavMenu}
-                                    style={dynamicHeaderStyle}
+                                <Link
+                                    href={page.href}
+                                    sx={{ textDecoration: 'none' }}
                                 >
-                                    <Button href={page.href}>
+                                    <MenuItem
+                                        key={page.id}
+                                        onClick={handleCloseNavMenu}
+                                        // style={dynamicHeaderStyle}
+                                    >
                                         {page.link}
-                                    </Button>
-                                </MenuItem>
+                                    </MenuItem>
+                                </Link>
                             ))}
                         </Menu>
                     </Box>

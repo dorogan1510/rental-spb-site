@@ -13,6 +13,7 @@ import Link from '../src/Link'
 import { cn } from '../src/translation/cn'
 import { ru } from '../src/translation/ru'
 import style from './Footer.module.scss'
+import InstagramIcon from '@mui/icons-material/Instagram'
 
 const Footer = () => {
     const router = useRouter()
@@ -121,12 +122,49 @@ l-3065 0 -110 -23z m3372 -2611 c171 -30 229 -62 271 -154 34 -74 37 -158 24
                                 </Stack>
                             </Button>
                         </Grid>
+                        <Grid item xs={12} sx={{ mb: '1rem' }}>
+                            <Button
+                                href={
+                                    'https://www.instagram.com/dobro_pozhalovat_spb'
+                                }
+                                target='_blank'
+                                sx={{
+                                    textTransform: 'none',
+                                    padding: '0.5rem 0.5rem 0.5rem 0',
+                                }}
+                            >
+                                <Stack
+                                    sx={{
+                                        flexDirection: 'row',
+                                        gap: '1rem',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    <InstagramIcon
+                                        sx={{ width: '40px', height: '40px' }}
+                                    />
+                                    <Typography
+                                        variant='body1'
+                                        sx={{ color: 'black' }}
+                                    >
+                                        Наш Инстаграм
+                                    </Typography>
+                                </Stack>
+                            </Button>
+                        </Grid>
                         {/* <Grid item xs={12}>
                             <Typography variant='body1'>
                                 Адрес нашего офиса (если есть)
                             </Typography>
                         </Grid> */}
                         <Grid item xs={12}>
+                            <Typography
+                                variant='body1'
+                                gutterBottom
+                                sx={{ color: 'black' }}
+                            >
+                                Забронировать квартиру:
+                            </Typography>
                             <Typography variant='body1'>
                                 <Link
                                     href='tel:+79275692869'
