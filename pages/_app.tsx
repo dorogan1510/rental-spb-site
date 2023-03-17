@@ -28,6 +28,14 @@ export default function MyApp(props: MyAppProps) {
                     name='viewport'
                     content='initial-scale=1, width=device-width'
                 />
+                <title>
+                    Квартиры посуточно в центре города Санкт-Петербург
+                </title>
+                <meta
+                    name='description'
+                    content='Квартиры посуточно в центре города Санкт-Петербург —
+                        выгоднее и комфортнее, чем номер в гостинице.'
+                />
             </Head>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
