@@ -49,6 +49,7 @@ import Nevskiy88_18m2_6 from '../public/static/img/rooms/Nevskiy88_18m2/Nevskiy8
 import Nevskiy88_18m2_7 from '../public/static/img/rooms/Nevskiy88_18m2/Nevskiy88_18m2(7).jpg'
 import Nevskiy88_18m2_8 from '../public/static/img/rooms/Nevskiy88_18m2/Nevskiy88_18m2(8).jpg'
 import Nevskiy88_18m2_9 from '../public/static/img/rooms/Nevskiy88_18m2/Nevskiy88_18m2(9).jpg'
+import Nevskiy88_18m2_10 from '../public/static/img/rooms/Nevskiy88_18m2/Nevskiy88_18m2(10).jpg'
 
 import Rubinshteyna18_5_30m2_1 from '../public/static/img/rooms/Rubinshteyna18_5_30m2/Rubinshteyna18_5_30m2(1).jpg'
 import Rubinshteyna18_5_30m2_2 from '../public/static/img/rooms/Rubinshteyna18_5_30m2/Rubinshteyna18_5_30m2(2).jpg'
@@ -115,6 +116,20 @@ import BolshayaPushkarskaya60_30m2_6 from '../public/static/img/rooms/BolshayaPu
 import BolshayaPushkarskaya60_30m2_7 from '../public/static/img/rooms/BolshayaPushkarskaya60_30m2/BolshayaPushkarskaya60_30m2(7).jpg'
 import BolshayaPushkarskaya60_30m2_8 from '../public/static/img/rooms/BolshayaPushkarskaya60_30m2/BolshayaPushkarskaya60_30m2(8).jpg'
 import BolshayaPushkarskaya60_30m2_9 from '../public/static/img/rooms/BolshayaPushkarskaya60_30m2/BolshayaPushkarskaya60_30m2(9).jpg'
+
+import Nevskiy88_18m2balcony_1 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(1).jpg'
+import Nevskiy88_18m2balcony_2 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(2).jpg'
+import Nevskiy88_18m2balcony_3 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(3).jpg'
+import Nevskiy88_18m2balcony_4 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(4).jpg'
+import Nevskiy88_18m2balcony_5 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(5).jpg'
+import Nevskiy88_18m2balcony_6 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(6).jpg'
+import Nevskiy88_18m2balcony_7 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(7).jpg'
+import Nevskiy88_18m2balcony_8 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(8).jpg'
+import Nevskiy88_18m2balcony_9 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(9).jpg'
+import Nevskiy88_18m2balcony_10 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(10).jpg'
+import Nevskiy88_18m2balcony_11 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(11).jpg'
+import Nevskiy88_18m2balcony_12 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(12).jpg'
+import Nevskiy88_18m2balcony_13 from '../public/static/img/rooms/Nevskiy88_18m2balcony/Nevskiy88_18m2balcony(13).jpg'
 
 import AcUnitIcon from '@mui/icons-material/AcUnit'
 import BathtubIcon from '@mui/icons-material/Bathtub'
@@ -494,6 +509,7 @@ export const dataExport: Idata[] = [
             Nevskiy88_18m2_2,
             Nevskiy88_18m2_4,
             Nevskiy88_18m2_8,
+            Nevskiy88_18m2_10,
             Nevskiy88_18m2_5,
             Nevskiy88_18m2_3,
             Nevskiy88_18m2_6,
@@ -960,6 +976,93 @@ export const dataExport: Idata[] = [
             },
             { id: '6', icon: 'TvIcon', item: 'Телевизор' },
             { id: '7', icon: 'BathtubIcon', item: 'Душевая кабина' },
+            { id: '8', icon: 'ChairIcon', item: 'Мебель в комнатах' },
+        ],
+    },
+    {
+        id: '10',
+        href: '/room/10',
+        iframeHref:
+            'https://yandex.ru/map-widget/v1/?um=constructor%3A6e722af6437ef543f04323f6bda4ccb8c3205b113b71a11d9383f6d53171ed0f&amp;source=constructor',
+
+        title: '1-комн. апартаменты, 18 м²',
+        shortDescription: '',
+        description:
+            'Двухуровневые Апартаменты! С БАЛКОНОМ! Самый центр города! Подходят для отпуска недалеко от дома, удаленной работы и семейного отдыха. Имеется всё для комфортного проживания! Есть плита, можно готовить,Wi-Fi, утюг, фен, телевизор, столик, стиральная машина, холодильник, микроволновая печь, полотенца, посуда. Метро Маяковская 3 мин. пешком, Московский вокзал 10 мин. Все основные достопримечательности в шаговой доступности!',
+        address:
+            'Санкт-Петербург, р-н Центральный, Литейный, Невский просп., 88',
+        metroStations: [
+            {
+                id: '1',
+                title: 'Владимирская',
+                iconFill: '#d61c38',
+                minutesToMetro: '10 мин',
+                nameOfColor: 'красный',
+            },
+            {
+                id: '2',
+                title: 'Маяковская',
+                iconFill: '#009959',
+                minutesToMetro: '4 мин',
+                nameOfColor: 'зеленый',
+            },
+            {
+                id: '3',
+                title: 'Достоевская',
+                iconFill: '#de7008',
+                minutesToMetro: '9 мин',
+                nameOfColor: 'оранжевый',
+            },
+        ],
+        img: [
+            Nevskiy88_18m2balcony_6,
+            Nevskiy88_18m2balcony_2,
+            Nevskiy88_18m2balcony_7,
+            Nevskiy88_18m2balcony_1,
+            Nevskiy88_18m2balcony_10,
+            Nevskiy88_18m2balcony_5,
+            Nevskiy88_18m2balcony_3,
+            Nevskiy88_18m2balcony_4,
+            Nevskiy88_18m2balcony_8,
+            Nevskiy88_18m2balcony_9,
+            Nevskiy88_18m2balcony_11,
+            Nevskiy88_18m2balcony_12,
+            Nevskiy88_18m2balcony_13,
+        ],
+
+        totalArea: '18м²',
+        floor: '3 из 4',
+        yearOfСonstruction: '1860',
+        price: 'от ₽1800/сут',
+        typeOfRent: 'Посуточно',
+        deposit: 'Нет',
+        communalPayments: 'Не включены',
+        ceilingHeight: '4м',
+        balcony: 'Нет',
+        windowView: 'На улицу',
+        childAvailable: 'Да',
+        animalAvailable: 'Нет',
+        bedCount: '2',
+        parking: 'Наземная',
+        entrances: '6',
+        heating: 'Центральное',
+        refurbishment: 'Дизайнерский',
+
+        features: [
+            {
+                id: '1',
+                icon: 'KitchenIcon',
+                item: 'Холодильник',
+            },
+            { id: '3', icon: 'WifiIcon', item: 'Интернет' },
+            { id: '4', icon: 'CountertopsIcon', item: 'Мебель на кухне' },
+            {
+                id: '5',
+                icon: 'LocalLaundryServiceIcon',
+                item: 'Стиральная машина',
+            },
+            { id: '6', icon: 'TvIcon', item: 'Телевизор' },
+            { id: '7', icon: 'BathtubIcon', item: 'Ванна' },
             { id: '8', icon: 'ChairIcon', item: 'Мебель в комнатах' },
         ],
     },
