@@ -711,32 +711,29 @@ const roomPage = () => {
                         {dataExport.map((data: Idata) => {
                             if (data.id === number) {
                                 return (
-                                    <div>
-                                        <Carousel
-                                            navButtonsAlwaysVisible
-                                            autoPlay={false}
-                                            key={data.id}
-                                        >
-                                            {data.img.map(
-                                                (
-                                                    nestedData: StaticImageData,
-                                                    index: any
-                                                ) => (
-                                                    <Image
-                                                        key={nestedData.toString()}
-                                                        src={nestedData}
-                                                        alt={'img'}
-                                                        style={{
-                                                            width: '100%',
-                                                            height: '100%',
-                                                            borderRadius:
-                                                                '0.5rem',
-                                                        }}
-                                                    />
-                                                )
-                                            )}
-                                        </Carousel>
-                                    </div>
+                                    <Carousel
+                                        navButtonsAlwaysVisible
+                                        autoPlay={false}
+                                        key={data.id}
+                                    >
+                                        {data.img.map(
+                                            (
+                                                nestedData: StaticImageData,
+                                                index: any
+                                            ) => (
+                                                <Image
+                                                    key={nestedData.toString()}
+                                                    src={nestedData}
+                                                    alt={'img'}
+                                                    style={{
+                                                        width: '100%',
+                                                        height: '100%',
+                                                        borderRadius: '0.5rem',
+                                                    }}
+                                                />
+                                            )
+                                        )}
+                                    </Carousel>
                                 )
                             }
                         })}

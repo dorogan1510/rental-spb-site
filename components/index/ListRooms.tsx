@@ -46,6 +46,8 @@ const ListRooms = () => {
         }
     })()
 
+    console.log(dataExport[1].img)
+
     const [mapVisible, setMapVisible] = useState<boolean>(false)
     const openMap = () => setMapVisible(true)
     const closeMap = () => setMapVisible(false)

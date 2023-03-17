@@ -14,6 +14,7 @@ import { cn } from '../src/translation/cn'
 import { ru } from '../src/translation/ru'
 import style from './Footer.module.scss'
 import InstagramIcon from '@mui/icons-material/Instagram'
+import TelegramIcon from '@mui/icons-material/Telegram'
 
 const Footer = () => {
     const router = useRouter()
@@ -122,6 +123,34 @@ l-3065 0 -110 -23z m3372 -2611 c171 -30 229 -62 271 -154 34 -74 37 -158 24
                                 </Stack>
                             </Button>
                         </Grid>
+                        <Grid item xs={12}>
+                            <Button
+                                href={'https://t.me/Welcome_to_SP'}
+                                target='_blank'
+                                sx={{
+                                    textTransform: 'none',
+                                    padding: '0.5rem 0.5rem 0.5rem 0',
+                                }}
+                            >
+                                <Stack
+                                    sx={{
+                                        flexDirection: 'row',
+                                        gap: '1rem',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    <TelegramIcon
+                                        sx={{ width: '40px', height: '40px' }}
+                                    />
+                                    <Typography
+                                        variant='body1'
+                                        sx={{ color: 'black' }}
+                                    >
+                                        Наш Телеграм канал
+                                    </Typography>
+                                </Stack>
+                            </Button>
+                        </Grid>
                         <Grid item xs={12} sx={{ mb: '1rem' }}>
                             <Button
                                 href={
@@ -152,6 +181,7 @@ l-3065 0 -110 -23z m3372 -2611 c171 -30 229 -62 271 -154 34 -74 37 -158 24
                                 </Stack>
                             </Button>
                         </Grid>
+
                         {/* <Grid item xs={12}>
                             <Typography variant='body1'>
                                 Адрес нашего офиса (если есть)

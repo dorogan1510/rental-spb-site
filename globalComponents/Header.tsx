@@ -168,13 +168,13 @@ const Header = () => {
                         >
                             {pages.map(page => (
                                 <Link
+                                    key={page.id}
                                     href={page.href}
                                     sx={{ textDecoration: 'none' }}
                                 >
                                     <MenuItem
                                         key={page.id}
                                         onClick={handleCloseNavMenu}
-                                        // style={dynamicHeaderStyle}
                                     >
                                         {page.link}
                                     </MenuItem>
