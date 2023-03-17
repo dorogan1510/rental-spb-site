@@ -3,9 +3,9 @@ import Image from 'next/image'
 import React from 'react'
 import Footer from '../globalComponents/Footer'
 import Header from '../globalComponents/Header'
-import img1 from '../public/static/img/rooms/Blohina33_65m2/Blohina33_65m2(1).jpg'
-import img2 from '../public/static/img/rooms/BolshayaPushkarskaya60_17m2_1/BolshayaPushkarskaya60_17m2_1(12).jpg'
-import img3 from '../public/static/img/rooms/Fontanka108_18m2/Fontanka108_18m2(1).jpg'
+import img1 from '../public/static/img/webP/Blohina33_65m2/Blohina33_65m2(1).webp'
+import img2 from '../public/static/img/webP/BolshayaPushkarskaya60_17m2_1/BolshayaPushkarskaya60_17m2_1(12).webp'
+import img3 from '../public/static/img/webP/Fontanka108_18m2/Fontanka108_18m2(1).webp'
 
 const about = () => (
     <>
