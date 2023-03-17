@@ -1033,7 +1033,7 @@ export const dataExport: Idata[] = [
         totalArea: '18м²',
         floor: '3 из 4',
         yearOfСonstruction: '1860',
-        price: 'от ₽1800/сут',
+        price: 'от ₽2500/сут',
         typeOfRent: 'Посуточно',
         deposit: 'Нет',
         communalPayments: 'Не включены',
