@@ -228,8 +228,8 @@ export const dataExport: Idata[] = [
             },
         ],
         img: [
-            lomonosova26_28m2_1,
             lomonosova26_28m2_7,
+            lomonosova26_28m2_1,
             lomonosova26_28m2_9,
             lomonosova26_28m2_10,
             lomonosova26_28m2_5,
