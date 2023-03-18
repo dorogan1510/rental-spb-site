@@ -37,6 +37,7 @@ import { cn } from '../../src/translation/cn'
 import { ru } from '../../src/translation/ru'
 import { titleFont } from '../../styles/fonts'
 import Balancer from 'react-wrap-balancer'
+import Grid2 from '@mui/material/Unstable_Grid2'
 
 const YandexMapRoomPage = dynamic(
     () => import('../../components/room/YandexMapRoomPage')
@@ -73,18 +74,21 @@ const roomPage = () => {
                     return (
                         <Box key={data.id}>
                             <Header />
-                            <div className={style.room}>
-                                <Container
-                                    maxWidth='xl'
+                            <Container
+                                maxWidth='xl'
+                                sx={{
+                                    mb: '3rem',
+                                }}
+                            >
+                                <Box
                                     sx={{
                                         backgroundColor: '#ffffff',
                                         borderRadius: '1rem',
-                                        padding: '0 1rem 3rem ',
-                                        mb: '3rem',
+                                        padding: '0 2rem 2rem ',
                                     }}
                                 >
                                     {/* Images above */}
-                                    <Grid
+                                    <Grid2
                                         container
                                         rowSpacing={{ xs: 1, md: 2 }}
                                         columnSpacing={{ xs: 1, md: 2 }}
@@ -94,7 +98,7 @@ const roomPage = () => {
                                             paddingTop: '1rem',
                                         }}
                                     >
-                                        <Grid item xs={12} md={6}>
+                                        <Grid2 xs={12} md={6}>
                                             <Button
                                                 onClick={
                                                     handleImageCarouselOpen
@@ -122,10 +126,9 @@ const roomPage = () => {
                                                     placeholder='blur'
                                                 />
                                             </Button>
-                                        </Grid>
-                                        <Grid
+                                        </Grid2>
+                                        <Grid2
                                             container
-                                            item
                                             xs={12}
                                             md={6}
                                             rowSpacing={1}
@@ -136,8 +139,7 @@ const roomPage = () => {
                                                 justifyContent: 'center',
                                             }}
                                         >
-                                            <Grid
-                                                item
+                                            <Grid2
                                                 xs={6}
                                                 sx={{
                                                     maxWidth: '100%',
@@ -170,9 +172,8 @@ const roomPage = () => {
                                                         placeholder='blur'
                                                     />
                                                 </Button>
-                                            </Grid>
-                                            <Grid
-                                                item
+                                            </Grid2>
+                                            <Grid2
                                                 xs={6}
                                                 sx={{
                                                     maxWidth: '100%',
@@ -205,9 +206,8 @@ const roomPage = () => {
                                                         placeholder='blur'
                                                     />
                                                 </Button>
-                                            </Grid>
-                                            <Grid
-                                                item
+                                            </Grid2>
+                                            <Grid2
                                                 xs={6}
                                                 sx={{
                                                     maxWidth: '100%',
@@ -240,9 +240,8 @@ const roomPage = () => {
                                                         placeholder='blur'
                                                     />
                                                 </Button>
-                                            </Grid>
-                                            <Grid
-                                                item
+                                            </Grid2>
+                                            <Grid2
                                                 xs={6}
                                                 sx={{
                                                     maxWidth: '100%',
@@ -275,9 +274,9 @@ const roomPage = () => {
                                                         placeholder='blur'
                                                     />
                                                 </Button>
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
+                                            </Grid2>
+                                        </Grid2>
+                                    </Grid2>
                                     {/* Images above */}
                                     <Grid
                                         container
@@ -691,8 +690,8 @@ const roomPage = () => {
                                         Где вы будете
                                     </Typography>
                                     <YandexMapRoomPage data={data} />
-                                </Container>
-                            </div>
+                                </Box>
+                            </Container>
                             <Footer />
                         </Box>
                     )
@@ -735,6 +734,7 @@ const roomPage = () => {
                                                         height: '100%',
                                                         borderRadius: '0.5rem',
                                                     }}
+                                                    placeholder='blur'
                                                 />
                                             )
                                         )}

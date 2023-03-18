@@ -27,8 +27,9 @@ import MetroImage from './MetroImage'
 import { useRouter } from 'next/router'
 import { cn } from '../../src/translation/cn'
 import { ru } from '../../src/translation/ru'
+import YandexMapMain from './YandexMapMain'
 
-const YandexMapMain = dynamic(() => import('./YandexMapMain'))
+// const YandexMapMain = dynamic(() => import('./YandexMapMain'))
 
 const ListRooms = () => {
     const router = useRouter()

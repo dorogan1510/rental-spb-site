@@ -36,7 +36,7 @@ const Footer = () => {
                 sx={{
                     alignItems: 'flex-start',
                     gap: '1rem',
-                    padding: { xs: '1rem 2rem', md: '1rem 6rem' },
+                    padding: '1rem',
                 }}
             >
                 {/* <IconButton

@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
 import { titleFont } from '../styles/fonts'
 import ListRooms from '../components/index/ListRooms'
@@ -29,6 +29,7 @@ const index = () => {
         <>
             <Box className={style.index}>
                 <Header />
+
                 <Box sx={{ textAlign: 'center', padding: '1rem' }}>
                     <Typography
                         variant='h1'
@@ -51,10 +52,11 @@ const index = () => {
                     </Typography>
                 </Box>
             </Box>
-
-            <Box sx={{ padding: '0 1rem', mb: '5rem' }}>
-                <ListRooms />
-            </Box>
+            <Container maxWidth='xl'>
+                <Box sx={{ mb: '5rem' }}>
+                    <ListRooms />
+                </Box>
+            </Container>
             <Footer />
         </>
     )
