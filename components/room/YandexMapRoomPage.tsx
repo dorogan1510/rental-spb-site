@@ -4,6 +4,7 @@ const YandexMapRoomPage = ({ data }: any) => {
     return (
         <div className={style.wrapper}>
             <iframe
+                title='yandex_map'
                 src={data.iframeHref}
                 width='800'
                 height='400'

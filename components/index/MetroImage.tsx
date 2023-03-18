@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import metro_marks from '../../public/static/img/metro_marks.jpg'
+import metro_marks from '../../public/static/img/metro_marks.webp'
 
 const MetroImage = () => {
     return (

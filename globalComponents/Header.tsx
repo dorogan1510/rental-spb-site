@@ -61,7 +61,10 @@ const Header = () => {
     ]
 
     const dynamicHeaderStyle = {
-        color: router.asPath === '/' ? 'white' : '#1a2d4d !important',
+        color:
+            router.asPath === '/' || router.asPath === '/#room-list'
+                ? 'white'
+                : '#1a2d4d',
     }
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
