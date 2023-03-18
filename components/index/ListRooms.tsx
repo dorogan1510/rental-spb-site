@@ -130,6 +130,7 @@ const ListRooms = () => {
                                             }}
                                             priority
                                             sizes='20vw'
+                                            placeholder='blur'
                                         />
                                     </CardMedia>
                                     <CardContent>
