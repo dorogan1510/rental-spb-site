@@ -129,7 +129,7 @@ const ListRooms = () => {
                                                     'rgb(0 0 0 / 30%) 0rem 0.45rem 0.775rem -0.0625rem, rgb(0 0 0 / 10%) 0rem 0.125rem 1.25rem -0.0625rem',
                                             }}
                                             priority
-                                            sizes='30vw'
+                                            sizes='20vw'
                                         />
                                     </CardMedia>
                                     <CardContent>
